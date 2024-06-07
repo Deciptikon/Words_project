@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   var button = document.getElementById("button-to-page1");
   console.log(button);
   // Добавляем обработчик события клика на кнопку
-  button.addEventListener("click", function () {
+  button.addEventListener("click", () => {
     // Получаем ссылку из атрибута data-href
     var link = button.getAttribute("data-href");
     // Переходим по указанной ссылке
