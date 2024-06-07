@@ -10,6 +10,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   document.getElementById("submit-button").addEventListener("click", checkWord);
+  // Находим кнопку по её id
+  var button = document.getElementById("button-to-page1");
+
+  // Добавляем обработчик события клика на кнопку
+  button.addEventListener("click", function () {
+    // Получаем ссылку из атрибута data-href
+    var link = button.getAttribute("data-href");
+    // Переходим по указанной ссылке
+    window.location.href = link;
+  });
 });
 
 function loadNextWord() {
