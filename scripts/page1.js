@@ -14,7 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function loadNextWord() {
   if (currentWordIndex >= words.length) {
-    document.getElementById("result").innerText = "You've completed the game!";
+    document.getElementById("result").innerText =
+      "Вы написали все слова на сегодня!";
     return;
   }
   const wordData = words[currentWordIndex];
@@ -31,10 +32,10 @@ function checkWord() {
   const correctWord = words[currentWordIndex].word.toLowerCase();
 
   if (userWord === correctWord) {
-    document.getElementById("result").innerText = "Correct!";
+    document.getElementById("result").innerText = "Верно!";
     currentWordIndex++;
     setTimeout(loadNextWord, 1000); // Load next word after 1 second
   } else {
-    document.getElementById("result").innerText = "Try again!";
+    document.getElementById("result").innerText = "Попробуй снова!";
   }
 }
