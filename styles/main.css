@@ -8,14 +8,14 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background: #000;
+  background: #6c6767;
 }
 
 h1 {
   margin-bottom: 20px;
 }
 
-#glow-on-hover {
+.glow-on-hover {
   width: 220px;
   height: 50px;
   border: none;
@@ -28,7 +28,7 @@ h1 {
   border-radius: 10px;
 }
 
-#glow-on-hover:before {
+.glow-on-hover:before {
   content: "";
   background: linear-gradient(
     45deg,
@@ -56,19 +56,19 @@ h1 {
   border-radius: 10px;
 }
 
-#glow-on-hover:active {
+.glow-on-hover:active {
   color: #000;
 }
 
-#glow-on-hover:active:after {
+.glow-on-hover:active:after {
   background: transparent;
 }
 
-#glow-on-hover:hover:before {
+.glow-on-hover:hover:before {
   opacity: 1;
 }
 
-#glow-on-hover:after {
+.glow-on-hover:after {
   z-index: -1;
   content: "";
   position: absolute;
