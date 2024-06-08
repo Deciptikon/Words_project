@@ -1,12 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Находим кнопку по её id
-  var button = document.getElementById("button-to-page1");
-  console.log("HELLO");
-  // Добавляем обработчик события клика на кнопку
-  button.addEventListener("click", () => {
-    // Получаем ссылку из атрибута data-href
-    var link = button.getAttribute("data-href");
-    // Переходим по указанной ссылке
+  var button1 = document.getElementById("button-to-page1");
+  button1.addEventListener("click", () => {
+    var link = button1.getAttribute("data-href");
+    console.log(link);
+    window.location.href = link;
+  });
+
+  var button2 = document.getElementById("button-to-page2");
+  button2.addEventListener("click", () => {
+    var link = button2.getAttribute("data-href");
+    console.log(link);
+    window.location.href = link;
+  });
+
+  var button3 = document.getElementById("button-to-page3");
+  button3.addEventListener("click", () => {
+    var link = button3.getAttribute("data-href");
     console.log(link);
     window.location.href = link;
   });
