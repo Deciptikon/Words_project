@@ -1,6 +1,6 @@
 html,
 body {
-  margin: 15;
+  margin: 15px;
   padding: 0;
   width: 100%;
   height: 100vh;
@@ -19,7 +19,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 15;
+  margin: 15px;
 }
 
 .glow-on-hover {
