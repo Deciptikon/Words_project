@@ -1,4 +1,7 @@
 let words = [];
+let wordsLength = 0;
+let positiveScore = 0;
+let negativeScore = 0;
 let currentWordIndex = 0;
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -6,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((response) => response.json())
     .then((data) => {
       words = data;
+      wordsLength = words.length;
       loadNextWord();
     });
 
@@ -21,12 +25,11 @@ function handleKeyPress(event) {
 }
 
 function loadNextWord() {
-  if (currentWordIndex >= words.length) {
-    document.getElementById("result").innerText =
-      "Вы написали все слова на сегодня!";
-    return;
-  }
+  currentWordIndex = getRandomInt(0, wordsLength);
   const wordData = words[currentWordIndex];
+
+  document.getElementById("positive-score").innerText = String(positiveScore);
+  document.getElementById("negative-score").innerText = String(negativeScore);
   document.getElementById("chines_word").innerText = wordData.china_word;
   document.getElementById("word-input").value = "";
   document.getElementById("result").innerText = "";
@@ -38,16 +41,22 @@ function checkWord() {
     .value.trim()
     .toLowerCase();
 
-  //var words = data.words.map(word => word.toLowerCase())
   const correctWords = words[currentWordIndex].russ_words.map((word) =>
     word.toLowerCase()
   );
 
   if (correctWords.includes(userWord)) {
     document.getElementById("result").innerText = "Верно!";
-    currentWordIndex++;
+    positiveScore++;
     setTimeout(loadNextWord, 3000); // Load next word after 1 second
   } else {
     document.getElementById("result").innerText = "Попробуй снова!";
+    negativeScore++;
   }
+}
+
+function getRandomInt(min, max) {
+  min = Math.floor(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
 }
