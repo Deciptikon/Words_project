@@ -1,10 +1,10 @@
 [
   {
     "word": "cat",
-    "image": "images/cat.jpg"
+    "image": "images/cat.png"
   },
   {
     "word": "dog",
-    "image": "images/dog.jpg"
+    "image": "images/dog.png"
   }
 ]
