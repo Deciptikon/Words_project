@@ -7,7 +7,7 @@
 
   --color-positive-score: rgb(0, 200, 0);
   --color-negative-score: rgb(200, 0, 0);
-  --size-text-score: 24;
+  --size-text-score: 30px;
 
   --padding: 10px;
 }
