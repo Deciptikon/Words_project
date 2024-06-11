@@ -37,9 +37,13 @@ function checkWord() {
     .getElementById("word-input")
     .value.trim()
     .toLowerCase();
-  const correctWord = words[currentWordIndex].word.toLowerCase();
 
-  if (userWord === correctWord) {
+  //var words = data.words.map(word => word.toLowerCase())
+  const correctWords = words[currentWordIndex].russ_words.map((word) =>
+    word.toLowerCase()
+  );
+
+  if (correctWords.includes(userWord)) {
     document.getElementById("result").innerText = "Верно!";
     currentWordIndex++;
     setTimeout(loadNextWord, 3000); // Load next word after 1 second
