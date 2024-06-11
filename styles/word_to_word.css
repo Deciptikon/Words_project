@@ -41,6 +41,7 @@
   flex-direction: column;
   align-items: center;
   color: var(--color-negative-score);
+  font-size: var(--size-text-score);
   font-weight: bold;
 }
 
@@ -62,7 +63,7 @@
 #space {
   display: flex;
   justify-content: space-between;
-  padding: 40px;
+  padding: 60px;
 }
 
 #chines_word {
