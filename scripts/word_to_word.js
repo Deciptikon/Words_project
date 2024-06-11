@@ -2,7 +2,7 @@ let words = [];
 let currentWordIndex = 0;
 
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("data/words.json")
+  fetch("data/dict.json")
     .then((response) => response.json())
     .then((data) => {
       words = data;
@@ -19,7 +19,7 @@ function loadNextWord() {
     return;
   }
   const wordData = words[currentWordIndex];
-  document.getElementById("word-image").src = wordData.image;
+  document.getElementById("chines_word").innerText = wordData.china_word;
   document.getElementById("word-input").value = "";
   document.getElementById("result").innerText = "";
 }
@@ -34,7 +34,7 @@ function checkWord() {
   if (userWord === correctWord) {
     document.getElementById("result").innerText = "Верно!";
     currentWordIndex++;
-    setTimeout(loadNextWord, 1000); // Load next word after 1 second
+    setTimeout(loadNextWord, 3000); // Load next word after 1 second
   } else {
     document.getElementById("result").innerText = "Попробуй снова!";
   }

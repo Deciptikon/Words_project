@@ -1,0 +1,50 @@
+[
+  {
+    "china_word": "超过",
+    "russ_words": ["превысить", "обогнать", "сверх-"],
+    "image": "images/cat.png",
+    "sound": ""
+  },
+  {
+    "china_word": "工业",
+    "russ_words": ["промышленность", "индустриальный"],
+    "image": "images/cat.png",
+    "sound": ""
+  },
+  {
+    "china_word": "人生",
+    "russ_words": ["жизнь", "образ жизни", "уровень жизни"],
+    "image": "images/cat.png",
+    "sound": ""
+  },
+  {
+    "china_word": "电影",
+    "russ_words": ["кино", "фильм"],
+    "image": "images/cat.png",
+    "sound": ""
+  },
+  {
+    "china_word": "制",
+    "russ_words": ["режим", "система", "закон", "эталон"],
+    "image": "images/cat.png",
+    "sound": ""
+  },
+  {
+    "china_word": "中",
+    "russ_words": ["внутри", "центральный", "середина", "центр"],
+    "image": "images/cat.png",
+    "sound": ""
+  },
+  {
+    "china_word": "为什么",
+    "russ_words": ["отчего", "из-за чего", "почему", "зачем", "для чего"],
+    "image": "images/cat.png",
+    "sound": ""
+  },
+  {
+    "china_word": "却",
+    "russ_words": ["отступать", "отходить", "возвращаться"],
+    "image": "images/cat.png",
+    "sound": ""
+  }
+]

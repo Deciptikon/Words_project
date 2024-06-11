@@ -6,13 +6,10 @@
   align-items: center;
 }
 
-#image-container {
-  margin-bottom: 20px;
-}
-
-#word-image {
-  max-width: 100%;
-  max-height: 300px;
+#chines_word {
+  margin-top: 10px;
+  font-size: 50px;
+  color: var(--text-color);
 }
 
 #word-input {
