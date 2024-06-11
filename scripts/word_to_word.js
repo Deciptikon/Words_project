@@ -10,7 +10,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   document.getElementById("submit-button").addEventListener("click", checkWord);
+  document.addEventListener("keydown", handleKeyPress);
 });
+
+function handleKeyPress(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    checkWord();
+  }
+}
 
 function loadNextWord() {
   if (currentWordIndex >= words.length) {
