@@ -16,14 +16,49 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: rgb(0, 128, 0);
+  font-size: var(--size-text-score);
+  color: var(--color-positive-score);
+}
+
+#positive-score-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#positive-score-prefix {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: var(--size-text-score);
+  color: var(--color-positive-score);
 }
 
 #negative-score {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: rgb(128, 0, 0);
+  color: var(--color-negative-score);
+}
+
+#negative-score-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#negative-score-prefix {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: var(--size-text-score);
+  color: var(--color-negative-score);
+}
+
+#space {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
 }
 
 #chines_word {

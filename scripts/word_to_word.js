@@ -46,13 +46,13 @@ function checkWord() {
   );
 
   if (correctWords.includes(userWord)) {
-    document.getElementById("result").innerText = "Верно!";
+    //document.getElementById("result").innerText = "Верно!";
     positiveScore++;
-    setTimeout(loadNextWord, 3000); // Load next word after 1 second
   } else {
-    document.getElementById("result").innerText = "Попробуй снова!";
+    //document.getElementById("result").innerText = "Попробуй снова!";
     negativeScore++;
   }
+  setTimeout(loadNextWord, 1000);
 }
 
 function getRandomInt(min, max) {

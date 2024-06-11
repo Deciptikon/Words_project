@@ -4,6 +4,11 @@
   --background-color: #06090b;
   --secondary-background-color: #f0f0f0;
   --text-color: #ffffff;
+
+  --color-positive-score: rgb(0, 128, 0);
+  --color-negative-score: rgb(128, 0, 0);
+  --size-text-score: 18;
+
   --padding: 10px;
 }
 
