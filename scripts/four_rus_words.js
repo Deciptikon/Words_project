@@ -4,6 +4,7 @@ let wordsLength = 0;
 let positiveScore = 0;
 let negativeScore = 0;
 let currentWordIndex = 0;
+let wordsData = [];
 
 let rootStyles;
 let bgColor;
@@ -32,34 +33,52 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   document.getElementById("submit-button").addEventListener("click", checkWord);
+
+  for (let i = 0; i < 4; i++) {
+    document.getElementById(`answer-${i}`).addEventListener("click", () => {
+      checkWord(i);
+    });
+  }
+
   document.addEventListener("keydown", handleKeyPress);
 });
 
 function handleKeyPress(event) {
   if (event.key === "Enter") {
     event.preventDefault();
-    checkWord();
+    //checkWord();
+  }
+  if (event.key >= "1" && event.key <= "4") {
+    const index = parseInt(event.key);
+    checkWord(index);
   }
 }
 
 function loadNextWord() {
-  currentWordIndex = getRandomInt(0, wordsLength);
-  const wordData = words[currentWordIndex];
+  currentWordIndex = getRandomInt(0, 4);
+
+  var wordsArray = getRandomNumbers(wordsLength, 4);
+  for (let i = 0; i < 4; i++) {
+    wordsData.push(words[wordsArray[i]]);
+  }
 
   document.getElementById("positive-score").innerText = String(positiveScore);
   document.getElementById("negative-score").innerText = String(negativeScore);
-  document.getElementById("chines_word").innerText = wordData.china_word;
+  document.getElementById("chines_word").innerText =
+    wordsData[currentWordIndex].china_word;
 
-  var wordInput = document.getElementById("word-input");
-  wordInput.style.backgroundColor = bgColor;
-  wordInput.value = "";
+  for (let i = 0; i < 4; i++) {
+    var bttAnswer = document.getElementById(`answer-${i}`);
+    bttAnswer.style.backgroundColor = bgColor;
+    bttAnswer.value = wordsData[currentWordIndex].russ_words.join(", ");
+  }
 
   document.getElementById("result").innerText = "";
 
   isPause = false;
 }
 
-function checkWord() {
+function checkWord(index) {
   if (isPause) {
     return;
   }
@@ -95,6 +114,15 @@ function getRandomInt(min, max) {
   min = Math.floor(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function getRandomNumbers(n, count) {
+  let numbers = Array.from({ length: n }, (_, i) => i + 1);
+  for (let i = numbers.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [numbers[i], numbers[j]] = [numbers[j], numbers[i]];
+  }
+  return numbers.slice(0, count);
 }
 
 function getStringRGB(r, g, b) {
