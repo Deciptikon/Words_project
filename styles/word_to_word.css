@@ -77,6 +77,9 @@
   margin-bottom: 20px;
   padding: 10px;
   font-size: 16px;
+  background-color: var(--background-color); /* Цвет фона */
+  color: var(--text-color); /* Цвет текста */
+  border: 2px solid #007bff;
 }
 
 #submit-button {

@@ -1,8 +1,14 @@
 let words = [];
 let wordsLength = 0;
+
 let positiveScore = 0;
 let negativeScore = 0;
 let currentWordIndex = 0;
+
+let rootStyles;
+let bgColor;
+let positiveScoreColor;
+let negativeScoreColor;
 
 document.addEventListener("DOMContentLoaded", () => {
   fetch("data/dict.json")
@@ -10,6 +16,16 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((data) => {
       words = data;
       wordsLength = words.length;
+
+      rootStyles = getComputedStyle(document.documentElement);
+      bgColor = rootStyles.getPropertyValue("--background-color").trim();
+      positiveScoreColor = rootStyles
+        .getPropertyValue("--color-positive-score")
+        .trim();
+      negativeScoreColor = rootStyles
+        .getPropertyValue("--color-negative-score")
+        .trim();
+
       loadNextWord();
     });
 
@@ -31,7 +47,11 @@ function loadNextWord() {
   document.getElementById("positive-score").innerText = String(positiveScore);
   document.getElementById("negative-score").innerText = String(negativeScore);
   document.getElementById("chines_word").innerText = wordData.china_word;
-  document.getElementById("word-input").value = "";
+
+  var wordInput = document.getElementById("word-input");
+  wordInput.style.backgroundColor = bgColor;
+  wordInput.value = "";
+
   document.getElementById("result").innerText = "";
 }
 
@@ -48,15 +68,25 @@ function checkWord() {
   if (correctWords.includes(userWord)) {
     //document.getElementById("result").innerText = "Верно!";
     positiveScore++;
+    document.getElementById("word-input").style.backgroundColor =
+      positiveScoreColor;
+    document.getElementById("positive-score").innerText = String(positiveScore);
   } else {
     //document.getElementById("result").innerText = "Попробуй снова!";
     negativeScore++;
+    document.getElementById("word-input").style.backgroundColor =
+      negativeScoreColor;
+    document.getElementById("negative-score").innerText = String(negativeScore);
   }
-  setTimeout(loadNextWord, 100);
+  setTimeout(loadNextWord, 1000);
 }
 
 function getRandomInt(min, max) {
   min = Math.floor(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function getStringRGB(r, g, b) {
+  return `rgb(${r}, ${g}, ${b})`;
 }
