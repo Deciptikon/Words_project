@@ -52,7 +52,7 @@ function checkWord() {
     //document.getElementById("result").innerText = "Попробуй снова!";
     negativeScore++;
   }
-  setTimeout(loadNextWord, 10);
+  setTimeout(loadNextWord, 100);
 }
 
 function getRandomInt(min, max) {
