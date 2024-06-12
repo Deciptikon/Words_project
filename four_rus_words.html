@@ -3,19 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Самоучитель иероглифов</title>
-    <link rel="stylesheet" href="styles/word_to_word.css" />
+    <title>Тренировка Слово-в-Слово</title>
+    <link rel="stylesheet" href="styles/four_rus_words.css" />
+    <link rel="icon" href="favicon.png" type="image/png" sizes="32x32" />
   </head>
   <body>
-    <div id="base">
-      <h1>Самоучитель иероглифов</h1>
-      <div id="image-container">
-        <img id="word-image" src="" alt="Image" />
+    <div id="top-bar">
+      <div id="positive-score-container">
+        <div id="positive-score-prefix">+</div>
+        <div id="positive-score">0</div>
       </div>
-      <input type="text" id="word-input" placeholder="Напишите слово" />
-      <button id="submit-button">Проверить</button>
+      <div id="space"></div>
+      <div id="negative-score-container">
+        <div id="negative-score-prefix">-</div>
+        <div id="negative-score">0</div>
+      </div>
+    </div>
+    <div id="base">
+      <div id="chines_word"></div>
+      <div id="main">
+        <button id="answer-1" class="btt-answer" type="button"></button>
+        <button id="answer-2" class="btt-answer" type="button"></button>
+        <button id="answer-3" class="btt-answer" type="button"></button>
+        <button id="answer-4" class="btt-answer" type="button"></button>
+      </div>
+      <button
+        id="submit-button"
+        class="glow-on-hover"
+        type="button"
+        data-href=""
+      >
+        Проверить (Enter)
+      </button>
     </div>
     <div id="result"></div>
-    <script src="scripts/word_to_word.js"></script>
+    <script src="scripts/four_rus_words.js"></script>
   </body>
 </html>

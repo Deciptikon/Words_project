@@ -121,3 +121,16 @@ main {
     background-position: 0 0;
   }
 }
+
+/*=======Кнопка ответа===========*/
+
+.btt-answer {
+  width: 220px;
+  height: 50px;
+  margin: 10px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: var(--background-color); /* Цвет фона */
+  color: var(--text-color); /* Цвет текста */
+  border: 2px solid #007bff;
+}

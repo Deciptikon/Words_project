@@ -1,0 +1,85 @@
+@import url("styles.css");
+
+#base {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#top-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#positive-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: var(--size-text-score);
+  color: var(--color-positive-score);
+  font-weight: bold;
+}
+
+#positive-score-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#positive-score-prefix {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: var(--size-text-score);
+  color: var(--color-positive-score);
+  font-weight: bold;
+}
+
+#negative-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--color-negative-score);
+  font-size: var(--size-text-score);
+  font-weight: bold;
+}
+
+#negative-score-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#negative-score-prefix {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: var(--size-text-score);
+  color: var(--color-negative-score);
+  font-weight: bold;
+}
+
+#space {
+  display: flex;
+  justify-content: space-between;
+  padding: 60px;
+}
+
+#chines_word {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 50px;
+  color: var(--text-color);
+}
+
+#submit-button {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 20px;
+  color: green;
+}
