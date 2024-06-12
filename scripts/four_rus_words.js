@@ -35,9 +35,11 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("submit-button").addEventListener("click", checkWord);
 
   for (let i = 0; i < 4; i++) {
-    document.getElementById(`answer-${i}`).addEventListener("click", () => {
-      checkWord(i);
-    });
+    document
+      .getElementById(`answer-${i}`)
+      .addEventListener("click", function () {
+        checkWord(i);
+      });
   }
 
   document.addEventListener("keydown", handleKeyPress);
