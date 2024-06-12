@@ -37,10 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function handleKeyPress(event) {
   if (event.key === "Enter") {
-    if (isPause) {
-      return;
-    }
-
     event.preventDefault();
     checkWord();
   }
@@ -64,6 +60,10 @@ function loadNextWord() {
 }
 
 function checkWord() {
+  if (isPause) {
+    return;
+  }
+
   const userWord = document
     .getElementById("word-input")
     .value.trim()
