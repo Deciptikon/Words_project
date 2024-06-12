@@ -10,6 +10,8 @@ let bgColor;
 let positiveScoreColor;
 let negativeScoreColor;
 
+let isPause = false;
+
 document.addEventListener("DOMContentLoaded", () => {
   fetch("data/dict.json")
     .then((response) => response.json())
@@ -35,6 +37,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function handleKeyPress(event) {
   if (event.key === "Enter") {
+    if (isPause) {
+      return;
+    }
+
     event.preventDefault();
     checkWord();
   }
@@ -53,6 +59,8 @@ function loadNextWord() {
   wordInput.value = "";
 
   document.getElementById("result").innerText = "";
+
+  isPause = false;
 }
 
 function checkWord() {
@@ -78,6 +86,8 @@ function checkWord() {
       negativeScoreColor;
     document.getElementById("negative-score").innerText = String(negativeScore);
   }
+
+  isPause = true;
   setTimeout(loadNextWord, 1000);
 }
 
