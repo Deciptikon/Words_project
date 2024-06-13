@@ -128,7 +128,6 @@ main {
   width: 220px;
   height: 50px;
   margin: 2px;
-  padding: 10px;
   font-size: 16px;
   background-color: var(--background-color); /* Цвет фона */
   color: var(--text-color); /* Цвет текста */
