@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("submit-button").addEventListener("click", checkWord);
 
-  for (let i = 1; i <= 4; i++) {
+  for (let i = 0; i < 4; i++) {
     document
       .getElementById(`answer-${i}`)
       .addEventListener("click", function () {
@@ -69,10 +69,10 @@ function loadNextWord() {
   document.getElementById("chines_word").innerText =
     wordsData[currentWordIndex].china_word;
 
-  for (let i = 1; i <= 4; i++) {
+  for (let i = 0; i < 4; i++) {
     var bttAnswer = document.getElementById(`answer-${i}`);
     bttAnswer.style.backgroundColor = bgColor;
-    bttAnswer.textContent = wordsData[i - 1].russ_words.join(", ");
+    bttAnswer.textContent = wordsData[i].russ_words.join(", ");
   }
 
   document.getElementById("result").innerText = "";
