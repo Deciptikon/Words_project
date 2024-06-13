@@ -53,7 +53,7 @@ function handleKeyPress(event) {
   }
   if (event.key >= "1" && event.key <= "4") {
     const index = parseInt(event.key);
-    checkWord(index);
+    checkWord(index - 1);
   }
 }
 
