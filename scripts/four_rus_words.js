@@ -78,7 +78,7 @@ function loadNextWord() {
     bttAnswer.textContent = wordsData[i].russ_words.join(", ");
   }
 
-  document.getElementById("result").innerText = "";
+  //document.getElementById("result").innerText = "";
 
   isPause = false;
 }
