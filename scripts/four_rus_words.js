@@ -72,7 +72,7 @@ function loadNextWord() {
   for (let i = 1; i <= 4; i++) {
     var bttAnswer = document.getElementById(`answer-${i}`);
     bttAnswer.style.backgroundColor = bgColor;
-    bttAnswer.value = wordsData[currentWordIndex].russ_words.join(", ");
+    bttAnswer.textContent = wordsData[currentWordIndex].russ_words.join(", ");
   }
 
   document.getElementById("result").innerText = "";
