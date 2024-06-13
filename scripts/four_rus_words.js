@@ -12,6 +12,7 @@ let positiveScoreColor;
 let negativeScoreColor;
 
 let isPause = false;
+let activeBtt = [];
 
 document.addEventListener("DOMContentLoaded", () => {
   fetch("data/dict.json")
@@ -32,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
       loadNextWord();
     });
 
-  document.getElementById("submit-button").addEventListener("click", checkWord);
+  document.getElementById("submit-button").addEventListener("click", nextWord);
 
   for (let i = 0; i < 4; i++) {
     document
@@ -57,6 +58,7 @@ function handleKeyPress(event) {
 }
 
 function loadNextWord() {
+  activeBtt = newActive();
   currentWordIndex = getRandomInt(0, 4);
 
   var wordsArray = getRandomNumbers(wordsLength - 1, 4);
@@ -84,32 +86,46 @@ function checkWord(index) {
   if (isPause) {
     return;
   }
+  if (!activeBtt[index]) {
+    return;
+  }
 
-  const userWord = document
-    .getElementById("word-input")
-    .value.trim()
-    .toLowerCase();
-
-  const correctWords = words[currentWordIndex].russ_words.map((word) =>
-    word.toLowerCase()
-  );
-
-  if (correctWords.includes(userWord)) {
+  if (index === currentWordIndex) {
     //document.getElementById("result").innerText = "Верно!";
     positiveScore++;
-    document.getElementById("word-input").style.backgroundColor =
-      positiveScoreColor;
+    isPause = true;
+    for (let i = 0; i < 4; i++) {
+      if (activeBtt[i]) {
+        var bttAnswer = document.getElementById(`answer-${i}`);
+        if (i === currentWordIndex) {
+          bttAnswer.style.backgroundColor = positiveScoreColor;
+        } else {
+          bttAnswer.style.backgroundColor = negativeScoreColor;
+        }
+        activeBtt[i] = false;
+      }
+    }
     document.getElementById("positive-score").innerText = String(positiveScore);
   } else {
     //document.getElementById("result").innerText = "Попробуй снова!";
     negativeScore++;
-    document.getElementById("word-input").style.backgroundColor =
-      negativeScoreColor;
+    activeBtt[index] = false;
+    var bttAnswer = document.getElementById(`answer-${index}`);
+    bttAnswer.style.backgroundColor = negativeScoreColor;
     document.getElementById("negative-score").innerText = String(negativeScore);
   }
+}
 
-  isPause = true;
-  setTimeout(loadNextWord, 1000);
+function nextWord() {
+  setTimeout(loadNextWord, 10);
+}
+
+function newActive() {
+  let active = [];
+  for (let i = 0; i < 4; i++) {
+    active.push(true);
+  }
+  return active;
 }
 
 function getRandomInt(min, max) {
