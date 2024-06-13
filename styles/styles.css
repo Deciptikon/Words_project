@@ -133,4 +133,7 @@ main {
   background-color: var(--background-color); /* Цвет фона */
   color: var(--text-color); /* Цвет текста */
   border: 2px solid #007bff;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
