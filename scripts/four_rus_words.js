@@ -59,7 +59,7 @@ function handleKeyPress(event) {
 function loadNextWord() {
   currentWordIndex = getRandomInt(0, 4);
 
-  var wordsArray = getRandomNumbers(wordsLength, 4);
+  var wordsArray = getRandomNumbers(wordsLength - 1, 4);
   for (let i = 0; i < 4; i++) {
     wordsData.push(words[wordsArray[i]]);
   }
