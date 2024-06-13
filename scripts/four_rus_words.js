@@ -47,9 +47,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function handleKeyPress(event) {
-  if (event.key === "Enter") {
+  if (event.key === "Enter" || event.key === " ") {
     event.preventDefault();
-    //checkWord();
+    nextWord();
   }
   if (event.key >= "1" && event.key <= "4") {
     const index = parseInt(event.key);
