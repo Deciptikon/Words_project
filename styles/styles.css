@@ -2,7 +2,7 @@
   --primary-color: #007bff;
   --secondary-color: #6c757d;
   --background-color: #06090b;
-  --secondary-background-color: #f0f0f0;
+  --secondary-background-color: #1a1a1a;
   --text-color: #ffffff;
 
   --color-positive-score: rgb(0, 200, 0);
@@ -144,4 +144,7 @@ main {
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+.btt-answer:hover {
+  background-color: var(--secondary-background-color);
 }
