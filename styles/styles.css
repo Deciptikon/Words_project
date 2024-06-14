@@ -145,6 +145,7 @@ main {
   justify-content: center;
   text-align: center;
 }
+
 .btt-answer:hover {
   background-color: var(--secondary-background-color);
 }
